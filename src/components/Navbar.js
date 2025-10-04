@@ -1,5 +1,6 @@
 import {Outlet} from "react-router";
 import "./style.css"
+import Footer from "./Footer";
 
 function Navbar() {
     return (
@@ -28,6 +29,7 @@ function Navbar() {
                 </ul>
             </nav>
             <Outlet/>
+            <Footer/>
         </div>
     );
 }

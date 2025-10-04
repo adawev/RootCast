@@ -1,0 +1,22 @@
+function Footer() {
+    return <div>
+        <footer className="footer">
+            <div className="footer-content">
+                <div className="footer-logo"></div>
+                <p className="footer-description">
+                    Your reliable source for accurate weather forecasts worldwide. Stay informed, stay prepared.
+                </p>
+                <div className="footer-links">
+                    <a href="/about">About</a>
+                    <a href="/contact">Contact</a>
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
+                </div>
+                <div className="footer-divider"></div>
+                <p className="footer-text">© 2025 WeatherApp. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+}
+
+export default Footer;
