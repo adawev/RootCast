@@ -3,23 +3,27 @@ import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { getWeather } from "../store/reducers/Weather";
 
-function CheckWeather({ getWeather, weathercheck }) {
+function CheckWeather({ getWeather, weathercheck, loading }) {
     const { handleSubmit, register, setValue } = useForm();
     const [cities, setCities] = useState([]);
     const [filteredCities, setFilteredCities] = useState([]);
 
+    // City listni yuklash
     useEffect(() => {
         fetch("/city.list.json")
             .then((res) => res.json())
-            .then((data) => setCities(data));
+            .then((data) => setCities(data))
+            .catch((err) => console.error("City list load error:", err));
     }, []);
 
+    // Form submit
     const onSubmitForm = (data) => {
         const { city, date } = data;
         if (!city) return;
         getWeather({ city, date });
     };
 
+    // City input filter
     const handleCityChange = (e) => {
         const val = e.target.value.toLowerCase();
         if (!val) return setFilteredCities([]);
@@ -34,16 +38,32 @@ function CheckWeather({ getWeather, weathercheck }) {
         setFilteredCities([]);
     };
 
-    // Card ko‘rsatish uchun shart
-    const showCard = weathercheck && weathercheck.weather && weathercheck.weather[0];
+    // Default card uchun minimal malumot
+    const cardData = weathercheck || {
+        location: { name: "Unknown City", country: "" },
+        weather: {
+            temp: 0,
+            feelsLike: 0,
+            pressure: 0,
+            humidity: 0,
+            windSpeed: 0,
+            main: "-",
+            description: "-",
+        },
+    };
 
     return (
         <div className="checkPage">
             <h1>Check Local Weather</h1>
             <p>Enter a location and select a date to get instant and accurate forecasts.</p>
 
+            {/* Form */}
             <div className="form-container">
-                <form className="form-control" id="CheckWeatherForm" onSubmit={handleSubmit(onSubmitForm)}>
+                <form
+                    className="form-control"
+                    id="CheckWeatherForm"
+                    onSubmit={handleSubmit(onSubmitForm)}
+                >
                     <div style={{ position: "relative" }}>
                         <input
                             type="text"
@@ -72,66 +92,60 @@ function CheckWeather({ getWeather, weathercheck }) {
                 </form>
             </div>
 
-            {showCard && (
-                <div className="weather-card">
-                    <div className="weather-header">
-                        <div className="weather-location">
-                            {weathercheck.name}, {weathercheck.sys?.country}
-                        </div>
-                        <div className="weather-date">
-                            {new Date().toLocaleDateString("en-US", {
-                                weekday: "short",
-                                month: "short",
-                                day: "numeric",
-                            })}
-                        </div>
-                    </div>
+            {/* Loading */}
+            {loading && <div className="loading">Loading...</div>}
 
-                    <div className="weather-main">
-                        <div className="weather-icon">
-                            <img
-                                src={`https://openweathermap.org/img/wn/${weathercheck.weather[0]?.icon}@2x.png`}
-                                alt="weather icon"
-                            />
-                        </div>
-                        <div className="weather-temp">
-                            {Math.round(weathercheck.main?.temp)}°C
-                        </div>
-                        <div className="weather-desc">
-                            {weathercheck.weather[0]?.description}
-                        </div>
+            {/* Weather Card */}
+            <div className="weather-card">
+                <div className="weather-header">
+                    <div className="weather-location">
+                        {cardData.location?.name}, {cardData.location?.country}
                     </div>
-
-                    <div className="weather-details">
-                        <div className="detail-item">
-                            <img src="https://cdn-icons-png.flaticon.com/512/481/481460.png" alt="wind" />
-                            <span>Wind: {weathercheck.wind?.speed} m/s</span>
-                        </div>
-                        <div className="detail-item">
-                            <img src="https://cdn-icons-png.flaticon.com/512/414/414974.png" alt="humidity" />
-                            <span>Humidity: {weathercheck.main?.humidity}%</span>
-                        </div>
-                        <div className="detail-item">
-                            <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="sunrise" />
-                            <span>
-                                Sunrise: {weathercheck.sys?.sunrise ? new Date(weathercheck.sys.sunrise * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "-"}
-                            </span>
-                        </div>
-                        <div className="detail-item">
-                            <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="sunset" className="flip" />
-                            <span>
-                                Sunset: {weathercheck.sys?.sunset ? new Date(weathercheck.sys.sunset * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "-"}
-                            </span>
-                        </div>
+                    <div className="weather-date">
+                        {new Date().toLocaleDateString("en-US", {
+                            weekday: "short",
+                            month: "short",
+                            day: "numeric",
+                        })}
                     </div>
                 </div>
-            )}
+
+                <div className="weather-main">
+                    <div className="weather-temp">
+                        {Math.round(cardData.weather.temp)}°C
+                    </div>
+                    <div className="weather-desc">
+                        {cardData.weather.description} ({cardData.weather.main})
+                    </div>
+                </div>
+
+                <div className="weather-details">
+                    <div className="detail-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/481/481460.png" alt="wind" />
+                        <span>Wind: {cardData.weather.windSpeed} m/s</span>
+                    </div>
+                    <div className="detail-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/414/414974.png" alt="humidity" />
+                        <span>Humidity: {cardData.weather.humidity}%</span>
+                    </div>
+                    <div className="detail-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="pressure" />
+                        <span>Pressure: {cardData.weather.pressure} hPa</span>
+                    </div>
+                    <div className="detail-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="feels like" />
+                        <span>Feels like: {cardData.weather.feelsLike}°C</span>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
 
+// Redux state mapping
 const mapStateToProps = (state) => ({
-    weathercheck: state.weathercheck.weathercheck, // slice nomi va state nomi to‘g‘ri
+    weathercheck: state.weathercheck.data,
+    loading: state.weathercheck.loading,
 });
 
 export default connect(mapStateToProps, { getWeather })(CheckWeather);

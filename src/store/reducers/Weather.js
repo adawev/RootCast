@@ -5,28 +5,45 @@ import { toast } from "sonner";
 const slice = createSlice({
     name: "weathercheck",
     initialState: {
-        weathercheck: [],
-        data: null,
+        data: {
+            "location": { "name": "Tseri", "lat": 35.07, "lon": 33.32 },
+            "weather": {
+                "temp": 25.88,
+                "feelsLike": 25.75,
+                "pressure": 1017,
+                "humidity": 47,
+                "windSpeed": 5.44,
+                "main": "Clouds",
+                "description": "scattered clouds"
+            }
+        },
         loading: false,
         error: null,
     },
     reducers: {
         resSaved: (state, action) => {
-            console.log("Weather data:", action.payload);
-            state.weathercheck = action.payload;
-            console.log("TTT",state.weathercheck);
+            state.data = action.payload;
+            state.loading = false;
         },
         errorCreate: (state) => {
-            toast.error("Iltimos 5 kun oraligidagi sanani kiriting va shahar nomi to‘g‘riligini tekshiring!");
+            state.loading = false;
+            toast.error(
+                "Iltimos 5 kun oraligidagi sanani kiriting va shahar nomi to‘g‘riligini tekshiring!"
+            );
+        },
+        loadingStart: (state) => {
+            state.loading = true;
         },
     },
 });
 
-export const { errorCreate, resSaved } = slice.actions;
+export const { resSaved, errorCreate, loadingStart } = slice.actions;
 
 export const getWeather = ({ city, date }) => (dispatch) => {
     let query = `?city=${encodeURIComponent(city)}`;
     if (date) query += `&date=${date}`;
+
+    dispatch(loadingStart());
 
     dispatch(
         apiCall({
