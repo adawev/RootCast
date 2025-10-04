@@ -488,8 +488,8 @@ body {
     }
 }
 .checkPage{
-    padding-top: 25vh;
-    height: 100vh;
+    padding-top: 20vh;
+    height: 110vh;
     background-color: #f9f9f9;
     text-align: center;
 }
@@ -612,7 +612,6 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, background 0.3s ease;
     margin-left: 15vw;
-    margin-top: 10vh;
 }
 
 .weather-card:hover {
@@ -680,4 +679,82 @@ body {
 
 .flip {
     transform: scaleX(-1);
+}
+/* Cards container */
+.cards-container {
+    display: flex;
+    justify-content: center; /* markazlashtirish */
+    gap: 4%; /* cardlar orasidagi bo'shliq */
+    margin-top: 30px;
+    flex-wrap: wrap; /* responsive uchun */
+    width: 82vw; /* umumiy container width */
+}
+/* Weather Card va Tips Card uchun umumiy style */
+.weather-card,
+.tips-card {
+    flex: 1 1 45%; /* ikkala card ham taxminan bir xil width, responsive */
+    min-width: 280px; /* juda kichik ekranda ham minimal kenglik */
+    max-width: 400px; /* katta ekranda ham cheklash */
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* Weather Card specific */
+.weather-card {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Tips Card specific */
+.tips-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(250,250,220,0.85));
+}
+
+.tips-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Tips list items */
+.tips-card li {
+    margin: 0;
+    padding: 15px 18px;
+    background: #fff9c4;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    color: #d6a500;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+}
+
+.tips-card li::before {
+    content: "⚠️";
+    font-size: 1.2rem;
+}
+
+.tips-card li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .weather-card,
+    .tips-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }
