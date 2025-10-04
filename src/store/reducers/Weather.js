@@ -14,6 +14,7 @@ const slice = createSlice({
         resSaved: (state, action) => {
             console.log("Weather data:", action.payload);
             state.weathercheck = action.payload;
+            console.log("TTT",state.weathercheck);
         },
         errorCreate: (state) => {
             toast.error("Iltimos 5 kun oraligidagi sanani kiriting va shahar nomi to‘g‘riligini tekshiring!");

@@ -34,6 +34,9 @@ function CheckWeather({ getWeather, weathercheck }) {
         setFilteredCities([]);
     };
 
+    // Card ko‘rsatish uchun shart
+    const showCard = weathercheck && weathercheck.weather && weathercheck.weather[0];
+
     return (
         <div className="checkPage">
             <h1>Check Local Weather</h1>
@@ -65,17 +68,12 @@ function CheckWeather({ getWeather, weathercheck }) {
                     </div>
 
                     <input type="date" className="date-input" {...register("date")} />
-                    <button type="submit" form="CheckWeatherForm">
-                        Get Weather
-                    </button>
+                    <button type="submit" form="CheckWeatherForm">Get Weather</button>
                 </form>
             </div>
-            {!weathercheck || !weathercheck.main ? (
-                null
-            ) : (
+
+            {showCard && (
                 <div className="weather-card">
-
-
                     <div className="weather-header">
                         <div className="weather-location">
                             {weathercheck.name}, {weathercheck.sys?.country}
@@ -92,60 +90,48 @@ function CheckWeather({ getWeather, weathercheck }) {
                     <div className="weather-main">
                         <div className="weather-icon">
                             <img
-                                src={`https://openweathermap.org/img/wn/${weathercheck.weather[0].icon}@2x.png`}
+                                src={`https://openweathermap.org/img/wn/${weathercheck.weather[0]?.icon}@2x.png`}
                                 alt="weather icon"
                             />
                         </div>
                         <div className="weather-temp">
-                            {Math.round(weathercheck.main.temp)}°C
+                            {Math.round(weathercheck.main?.temp)}°C
                         </div>
                         <div className="weather-desc">
-                            {weathercheck.weather[0].description}
+                            {weathercheck.weather[0]?.description}
                         </div>
                     </div>
 
                     <div className="weather-details">
                         <div className="detail-item">
                             <img src="https://cdn-icons-png.flaticon.com/512/481/481460.png" alt="wind" />
-                            <span>Wind: {weathercheck.wind.speed} m/s</span>
+                            <span>Wind: {weathercheck.wind?.speed} m/s</span>
                         </div>
                         <div className="detail-item">
                             <img src="https://cdn-icons-png.flaticon.com/512/414/414974.png" alt="humidity" />
-                            <span>Humidity: {weathercheck.main.humidity}%</span>
+                            <span>Humidity: {weathercheck.main?.humidity}%</span>
                         </div>
                         <div className="detail-item">
                             <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="sunrise" />
                             <span>
-                                    Sunrise:{" "}
-                                {new Date(weathercheck.sys.sunrise * 1000).toLocaleTimeString([], {
-                                    hour: "2-digit",
-                                    minute: "2-digit",
-                                })}
-                                </span>
+                                Sunrise: {weathercheck.sys?.sunrise ? new Date(weathercheck.sys.sunrise * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "-"}
+                            </span>
                         </div>
                         <div className="detail-item">
-                            <img
-                                src="https://cdn-icons-png.flaticon.com/512/869/869869.png"
-                                alt="sunset"
-                                className="flip"
-                            />
+                            <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="sunset" className="flip" />
                             <span>
-                                    Sunset:{" "}
-                                {new Date(weathercheck.sys.sunset * 1000).toLocaleTimeString([], {
-                                    hour: "2-digit",
-                                    minute: "2-digit",
-                                })}
-                                </span>
+                                Sunset: {weathercheck.sys?.sunset ? new Date(weathercheck.sys.sunset * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "-"}
+                            </span>
                         </div>
                     </div>
                 </div>
             )}
-
         </div>
     );
 }
 
 const mapStateToProps = (state) => ({
-    weather: state.weathercheck,
+    weathercheck: state.weathercheck.weathercheck, // slice nomi va state nomi to‘g‘ri
 });
+
 export default connect(mapStateToProps, { getWeather })(CheckWeather);
