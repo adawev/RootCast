@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import teacher from "./reducers/teacher";
+import weather from "./reducers/Weather";
 import api from './middleware/api';
 
 export default configureStore({
     reducer: {
-        teacher,
+        weather,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(api),

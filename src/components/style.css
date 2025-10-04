@@ -488,7 +488,7 @@ body {
     }
 }
 .checkPage{
-    padding-top: 30vh;
+    padding-top: 25vh;
     height: 100vh;
     background-color: #f9f9f9;
     text-align: center;
@@ -508,7 +508,7 @@ body {
     justify-content: flex-start;
     gap: 25px;
     margin: 40px auto;
-    width: 875px;
+    width: 880px;
     text-align: left;
 }
 
@@ -544,7 +544,7 @@ body {
 }
 
 .checkPage button {
-    padding: 12px 20px;
+    padding: 16px 24px;
     background: #000;
     color: #fff;
     border: none;
@@ -600,4 +600,84 @@ body {
     gap: 20px;
     justify-content: flex-start;
     position: relative;
+}
+
+.weather-card {
+    background: rgba(255, 255, 255, 0.9);
+    color: #111;
+    width: 320px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+    margin-left: 15vw;
+    margin-top: 10vh;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 1);
+}
+
+.weather-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #333;
+}
+
+.weather-main {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.weather-icon img {
+    width: 70px;
+    opacity: 0.9;
+}
+
+.weather-temp {
+    font-size: 42px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.weather-desc {
+    color: #444;
+    font-size: 15px;
+    margin-top: 4px;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+    gap: 12px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 8px 10px;
+    font-size: 13px;
+    color: #111;
+    transition: background 0.3s ease;
+}
+
+.detail-item:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.detail-item img {
+    width: 18px;
+    filter: invert(0); /* qora iconlar */
+    opacity: 0.8;
+}
+
+.flip {
+    transform: scaleX(-1);
 }
