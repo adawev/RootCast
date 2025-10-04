@@ -3,4 +3,5 @@ function About(){
         about
     </div>
 }
+
 export default About;
