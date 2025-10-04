@@ -86,7 +86,7 @@ function LandingPage() {
 
         <footer class="footer">
             <div class="footer-content">
-                <div class="footer-logo"><img src='../images/logo.png' alt="f"/></div>
+                <div class="footer-logo"></div>
                 <p class="footer-description">
                     Your reliable source for accurate weather forecasts worldwide. Stay informed, stay prepared.
                 </p>

@@ -8,7 +8,6 @@ function Navbar() {
                 <ul className="nav-links">
                     <li>
                         <a href="#" className="logo">
-                            <img src='../images/logo.png' alt="Logo" style={{ height: "40px" }} />
                         </a>
                     </li>
                     <div className="nav-center">

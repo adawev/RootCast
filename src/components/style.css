@@ -61,11 +61,13 @@ body {
 }
 
 .logo {
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #fff;
+    margin-left: -2rem;
+    width: 290px;             /* kengligi kattalashdi */
+    height: 65px;             /* balandligi kattalashdi */
+    background: url('../images/logo.png') no-repeat center center;
+    background-size: contain;
+    display: inline-block;    /* flex ichida joylashadi, paddingga ta’sir qilmaydi */
 }
-
 .auth-buttons {
     display: flex;
     gap: 1rem;
@@ -397,9 +399,12 @@ body {
 }
 
 .footer-logo {
-    font-size: 1.8rem;
-    font-weight: 700;
     margin-bottom: 1.5rem;
+    width: 400px;             /* kengligi kattalashdi */
+    height: 80px;             /* balandligi kattalashdi */
+    background: url('../images/logo.png') no-repeat center center;
+    background-size: contain;
+    display: inline-block;
 }
 
 .footer-description {
