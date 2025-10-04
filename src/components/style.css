@@ -1,0 +1,482 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    color: #000000;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    box-shadow: none;
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 90%;
+    max-width: 1200px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-center {
+    display: flex;
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+.nav-links a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-login {
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    border: 2px solid #000;
+    border-radius: 25px;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-login:hover {
+    opacity: 0.7;
+}
+
+.btn-signup {
+    padding: 0.6rem 1.5rem;
+    background: #000;
+    border: 2px solid #000;
+    border-radius: 25px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-signup:hover {
+    opacity: 0.8;
+}
+
+/* Hero Section */
+.hero {
+
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 2rem 3rem;
+    background: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=80') left center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    margin: 0;
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    max-width: 1200px;      /* container kengligi bilan moslashtirish */
+    margin-left: auto;       /* o‘ngdan va chapdan markazlash */
+    margin-right: auto;
+    padding: 0 3rem;
+}
+
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    margin-bottom: 3rem;
+    max-width: 500px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cloud-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    box-shadow: none;
+}
+
+.cloud-button:hover {
+    opacity: 0.9;
+}
+
+.cloud-icon {
+    font-size: 1.5rem;
+    filter: grayscale(100%) brightness(0);
+}
+
+/* Info Section */
+.info-section {
+    padding: 5rem 2rem;
+    background: #f9f9f9;
+}
+
+.info-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-text {
+    text-align: left;
+}
+
+.info-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.info-text p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.info-features {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.info-features li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.info-features li::before {
+    content: '✓';
+    background: #000;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.info-card {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+}
+
+.card-intro {
+    text-align: left;
+    margin-bottom: 2.5rem;
+    display: none;
+}
+
+.card-intro h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.card-intro p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.location-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.location-name {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.location-icon {
+    font-size: 1.5rem;
+}
+
+.weather-main {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.temperature {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.condition {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.detail-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 16px;
+}
+
+.detail-label {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Features Section */
+.features {
+    padding: 5rem 2rem;
+    background: #fff;
+}
+
+.features-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.features-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 2.5rem;
+    background: #f9f9f9;
+    border-radius: 20px;
+    transition: transform 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item:nth-child(1) {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+}
+
+.feature-item:nth-child(2) {
+    background: linear-gradient(135deg, #f093fb15 0%, #f5576c15 100%);
+}
+
+.feature-item:nth-child(3) {
+    background: linear-gradient(135deg, #4facfe15 0%, #00f2fe15 100%);
+}
+
+.feature-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.feature-text {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Footer */
+.footer {
+    background: #000;
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.footer-description {
+    color: #999;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    font-size: 1.05rem;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    opacity: 0.7;
+}
+
+.footer-divider {
+    height: 1px;
+    background: #333;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.footer-text {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 968px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        text-align: center;
+        background-position: center;
+    }
+
+    .hero p {
+        margin: 0 auto 3rem;
+    }
+
+    .navbar {
+        padding: 1rem 1.5rem;
+        width: 95%;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-center {
+        display: none;
+    }
+
+    .auth-buttons {
+        display: none;
+    }
+
+    .info-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
