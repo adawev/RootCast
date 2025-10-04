@@ -5,31 +5,20 @@ import { toast } from "sonner";
 const slice = createSlice({
     name: "weathercheck",
     initialState: {
-        data: {
-            "location": { "name": "Tseri", "lat": 35.07, "lon": 33.32 },
-            "weather": {
-                "temp": 25.88,
-                "feelsLike": 25.75,
-                "pressure": 1017,
-                "humidity": 47,
-                "windSpeed": 5.44,
-                "main": "Clouds",
-                "description": "scattered clouds"
-            }
-        },
+        data: null,
         loading: false,
         error: null,
     },
     reducers: {
         resSaved: (state, action) => {
             state.data = action.payload;
+            state.error = null;
             state.loading = false;
         },
-        errorCreate: (state) => {
+        errorCreate: (state, action) => {
             state.loading = false;
-            toast.error(
-                "Iltimos 5 kun oraligidagi sanani kiriting va shahar nomi to‘g‘riligini tekshiring!"
-            );
+            state.data = null; // data yo‘q
+            state.error = action.payload?.error || "Xatolik yuz berdi!";
         },
         loadingStart: (state) => {
             state.loading = true;
