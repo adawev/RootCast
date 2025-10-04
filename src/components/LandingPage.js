@@ -91,10 +91,10 @@ function LandingPage() {
                     Your reliable source for accurate weather forecasts worldwide. Stay informed, stay prepared.
                 </p>
                 <div class="footer-links">
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
+                    <a href="/about">About</a>
+                    <a href="/contact">Contact</a>
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
                 </div>
                 <div class="footer-divider"></div>
                 <p class="footer-text">© 2025 WeatherApp. All rights reserved.</p>
