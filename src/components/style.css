@@ -763,12 +763,17 @@ button {
 }
 
 .wrapperRegisterPage {
-    max-width: 450px;
-    margin:0 auto;
     padding-top: 20vh;
     height: 100vh;
+    background-image: url("../images/nature.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
+.wrapperRegisterPage .auth-page {
+    max-width: 450px;
+    margin:0 auto;
+}
 .wrapperRegisterPage .auth-card {
     background: #fff;
     padding: 3rem;
