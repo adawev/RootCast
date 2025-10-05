@@ -1,10 +1,15 @@
 import {useForm} from "react-hook-form";
+import { toast } from "sonner"
+import {useNavigate} from "react-router";
 
 function Login() {
-    const {handleSubmit, register, setValue} = useForm();
+    const {handleSubmit, register, reset} = useForm();
+    const navigate = useNavigate();
 
     const onSubmitLogin = (data) => {
-
+        toast.success("Login successfully");
+        reset()
+        navigate('/');
     }
 
     return <div className={'wrapperLoginPage'}>
@@ -29,7 +34,7 @@ function Login() {
                     <div className="form-group">
                         <label className="form-label" htmlFor="loginPassword">Password</label>
                         <input
-                            type="email"
+                            type="password"
                             id="loginPassword"
                             className="form-input"
                             placeholder="Enter password"
