@@ -11,7 +11,7 @@ function About(){
             <div className="team-grid">
                 <div className="team-member">
                     <div className="member-avatar">
-                        <img src="https://share.google/images/l3FMNjZqWxBAX0dw9"
+                        <img src="https://www.freepik.com/premium-vector/young-man-avatar-character-due-avatar-man-vector-icon-cartoon-illustration_343352851.htm#fromView=keyword&page=25&position=30&uuid=5b800798-3254-48dd-96e7-a9fa92f16a34&query=Guy+avatar"
                              alt="John Smith"/>
                     </div>
                     <div className="member-name">Lutfiyev Ilyos</div>
@@ -19,7 +19,7 @@ function About(){
                 </div>
                 <div className="team-member">
                     <div className="member-avatar">
-                        <img src="https://share.google/images/l3FMNjZqWxBAX0dw9"
+                        <img src="https://www.freepik.com/premium-vector/young-man-avatar-character-due-avatar-man-vector-icon-cartoon-illustration_343352851.htm#fromView=keyword&page=25&position=30&uuid=5b800798-3254-48dd-96e7-a9fa92f16a34&query=Guy+avatar"
                              alt="Sarah Johnson"/>
                     </div>
                     <div className="member-name">Tursunboyev Odiljon</div>
@@ -27,7 +27,7 @@ function About(){
                 </div>
                 <div className="team-member">
                     <div className="member-avatar">
-                        <img src="https://share.google/images/l3FMNjZqWxBAX0dw9"
+                        <img src="https://www.freepik.com/premium-vector/young-man-avatar-character-due-avatar-man-vector-icon-cartoon-illustration_343352851.htm#fromView=keyword&page=25&position=30&uuid=5b800798-3254-48dd-96e7-a9fa92f16a34&query=Guy+avatar"
                              alt="Michael Chen"/>
                     </div>
                     <div className="member-name">Adashev Diyor</div>
@@ -35,7 +35,7 @@ function About(){
                 </div>
                 <div className="team-member">
                     <div className="member-avatar">
-                        <img src="https://share.google/images/l3FMNjZqWxBAX0dw9"
+                        <img src="https://www.freepik.com/premium-vector/young-man-avatar-character-due-avatar-man-vector-icon-cartoon-illustration_343352851.htm#fromView=keyword&page=25&position=30&uuid=5b800798-3254-48dd-96e7-a9fa92f16a34&query=Guy+avatar"
                              alt="Emily Davis"/>
                     </div>
                     <div className="member-name">Kamiljonov Shoxrux</div>
@@ -43,7 +43,7 @@ function About(){
                 </div>
                 <div className="team-member">
                     <div className="member-avatar">
-                        <img src="https://share.google/images/l3FMNjZqWxBAX0dw9"
+                        <img src="https://www.freepik.com/premium-vector/young-man-avatar-character-due-avatar-man-vector-icon-cartoon-illustration_343352851.htm#fromView=keyword&page=25&position=30&uuid=5b800798-3254-48dd-96e7-a9fa92f16a34&query=Guy+avatar"
                              alt="Emily Davis"/>
                     </div>
                     <div className="member-name">Isayev Alibek</div>
