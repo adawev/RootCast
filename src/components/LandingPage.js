@@ -3,11 +3,15 @@ function LandingPage() {
         <section class="hero">
             <div class="hero-content">
                 <h1>Real time, real weather</h1>
-                <p>Instant and accurate forecasts at your fingertips. Get real-time weather updates from anywhere in the world.</p>
-                <button class="cloud-button">
-                    <span class="cloud-icon">☁️</span>
-                    Check Weather
-                </button>
+                <p>Instant and accurate forecasts at your fingertips. Get real-time weather updates from anywhere in the
+                    world.</p>
+                <a href="/check-weather">
+                    <button className="cloud-button">
+                        <span className="cloud-icon">☁️</span>
+                        Check Weather
+                    </button>
+                </a>
+
             </div>
         </section>
 
@@ -15,8 +19,11 @@ function LandingPage() {
             <div class="info-content">
                 <div class="info-text">
                     <h2>Real-Time Weather Data</h2>
-                    <p>Get instant access to accurate weather information for any location around the globe. Our advanced forecasting system provides detailed data including temperature, humidity, wind speed, and more.</p>
-                    <p>Whether you're planning your day or preparing for a trip, we've got you covered with reliable weather insights.</p>
+                    <p>Get instant access to accurate weather information for any location around the globe. Our
+                        advanced forecasting system provides detailed data including temperature, humidity, wind speed,
+                        and more.</p>
+                    <p>Whether you're planning your day or preparing for a trip, we've got you covered with reliable
+                        weather insights.</p>
                     <ul class="info-features">
                         <li>Accurate 7-day forecasts</li>
                         <li>Hourly weather updates</li>
@@ -69,7 +76,9 @@ function LandingPage() {
                 <div class="feature-item">
                     <div class="feature-icon">🌍</div>
                     <div class="feature-title">Global Coverage</div>
-                    <div class="feature-text">Access accurate weather data from thousands of locations around the world</div>
+                    <div class="feature-text">Access accurate weather data from thousands of locations around the
+                        world
+                    </div>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">⏱️</div>
@@ -86,4 +95,5 @@ function LandingPage() {
 
     </div>
 }
+
 export default LandingPage;

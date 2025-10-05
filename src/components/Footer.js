@@ -13,7 +13,7 @@ function Footer() {
                     <a href="/terms">Terms of Service</a>
                 </div>
                 <div className="footer-divider"></div>
-                <p className="footer-text">© 2025 WeatherApp. All rights reserved.</p>
+                <p className="footer-text">© 2025 RootCast. All rights reserved.</p>
             </div>
         </footer>
     </div>

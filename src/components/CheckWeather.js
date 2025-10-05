@@ -9,19 +9,16 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
     const [filteredCities, setFilteredCities] = useState([]);
     const [touristTips, setTouristTips] = useState([]);
 
-    // Mapping table: API city name -> JSON city name
     const cityMapping = {
         "Paris": "Paris",
         "New York": "New York",
         "Tokyo": "Tokyo",
         "London": "London",
         "Moscow": "Moscow"
-        // Shu yerga boshqa shaharlar qo‘shing
     };
 
     const normalize = (str) => str?.trim().toLowerCase();
 
-    // City listni yuklash
     useEffect(() => {
         fetch("/city.list.json")
             .then((res) => res.json())
@@ -29,7 +26,6 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
             .catch((err) => console.error("City list load error:", err));
     }, []);
 
-    // Tourist tips JSONni yuklash
     useEffect(() => {
         fetch("/touristTips.json")
             .then((res) => res.json())
@@ -37,7 +33,6 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
             .catch((err) => console.error("Tourist tips load error:", err));
     }, []);
 
-    // Form submit
     const onSubmitForm = (data) => {
         const { city, date } = data;
         if (!city) return;

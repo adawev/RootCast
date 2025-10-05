@@ -8,8 +8,11 @@
 body {
     background: #ffffff;
     color: #000000;
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif !important;
     font-style: normal;
+}
+button {
+    font-family: "Inter", sans-serif !important;
 }
 
 .container {
@@ -757,4 +760,74 @@ body {
         flex: 1 1 100%;
         max-width: 100%;
     }
+}
+
+.wrapperRegisterPage {
+    max-width: 450px;
+    margin:0 auto;
+    padding-top: 20vh;
+    height: 100vh;
+}
+
+.wrapperRegisterPage .auth-card {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+}
+.wrapperRegisterPage .auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.wrapperRegisterPage .auth-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.wrapperRegisterPage .auth-header p {
+    color: #666;
+    font-size: 1rem;
+}
+.wrapperRegisterPage .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.wrapperRegisterPage .form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #333;
+}
+.wrapperRegisterPage .form-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    font-family: "Inter", sans-serif;
+
+}
+.wrapperRegisterPage .form-input:focus {
+    outline: none;
+    border-color: #000;
+}
+.wrapperRegisterPage .submit-button {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 1.2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    margin-top: 1rem;
+    font-family: "Inter", sans-serif ;
+
+}
+.wrapperRegisterPage .submit-button:hover {
+    opacity: 0.8;
 }
