@@ -19,6 +19,7 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
 
     const normalize = (str) => str?.trim().toLowerCase();
 
+    // Shaharlar ro'yxatini yuklash
     useEffect(() => {
         fetch("/city.list.json")
             .then((res) => res.json())
@@ -26,6 +27,7 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
             .catch((err) => console.error("City list load error:", err));
     }, []);
 
+    // Tourist tips ni yuklash
     useEffect(() => {
         fetch("/touristTips.json")
             .then((res) => res.json())
@@ -33,12 +35,14 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
             .catch((err) => console.error("Tourist tips load error:", err));
     }, []);
 
+    // Form submit
     const onSubmitForm = (data) => {
         const { city, date } = data;
         if (!city) return;
         getWeather({ city, date });
     };
 
+    // City input search/filter
     const handleCityChange = (e) => {
         const val = e.target.value.toLowerCase();
         if (!val) return setFilteredCities([]);
@@ -53,22 +57,24 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
         setFilteredCities([]);
     };
 
+    // Card uchun backenddan kelgan ma'lumot
     const cardData = useMemo(() => {
         if (!weathercheck || weathercheck.error) return null;
         return weathercheck;
     }, [weathercheck]);
 
+    // Tipslar (JSON + backend advice)
     const tips = useMemo(() => {
         if (!cardData?.temp) return [];
         let filteredTips = [];
 
-        if (cardData.location?.name) {
-            const mappedName = cityMapping[cardData.location.name] || cardData.location.name;
+        if (cardData.city) {
+            const mappedName = cityMapping[cardData.city] || cardData.city;
             const cityTips = touristTips.find((t) => normalize(t.city) === normalize(mappedName));
             if (cityTips?.tourist_tips) filteredTips = cityTips.tourist_tips.slice(0, 3); // faqat 3 ta
         }
 
-        // Agar backend advice mavjud bo‘lsa, uni oxiriga qo‘shish
+        // Backend advice ni oxiriga qo'shish
         if (cardData.advice) filteredTips.push(cardData.advice);
 
         return filteredTips;
@@ -120,10 +126,10 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
                     <div className="weather-card">
                         <div className="weather-header">
                             <div className="weather-location">
-                                {cardData.location?.name || "-"}, {cardData.location?.country || "-"}
+                                {cardData.city || cardData.location?.name || "-"}, {cardData.location?.country || "-"}
                             </div>
                             <div className="weather-date">
-                                {new Date().toLocaleDateString("en-US", {
+                                {cardData.date || new Date().toLocaleDateString("en-US", {
                                     weekday: "short",
                                     month: "short",
                                     day: "numeric",
