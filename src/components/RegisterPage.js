@@ -1,11 +1,14 @@
 import {useForm} from "react-hook-form";
+import {connect} from "react-redux";
+import {login} from '../store/reducers/Login'
 
 
-function RegisterPage() {
+function RegisterPage({login}) {
     const {handleSubmit, register, setValue} = useForm();
 
     const onSubmitRegister = (data) => {
-
+        login(data)
+        console.log(data)
     }
 
     return <div className={'wrapperRegisterPage'}>
@@ -57,4 +60,4 @@ function RegisterPage() {
     </div>
 }
 
-export default RegisterPage;
+export default connect(null, {login})(RegisterPage);
