@@ -15,7 +15,6 @@ function Navbar({footer}) {
                         <li><a href="/">Home</a></li>
                         <li><a href="/check-weather">Check Weather</a></li>
                         <li><a href="/about">About</a></li>
-                        <li><a href="/contacts">Contact</a></li>
                     </div>
                     <div className="auth-buttons">
                         <a href="/login">
