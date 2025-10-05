@@ -11,7 +11,7 @@ function About(){
             <div className="team-grid">
                 <div className="team-member">
                     <div className="member-avatar">
-                        <img src="../images/Lutfiyev%20Ilyos.jpg"
+                        <img src="https://share.google/images/l3FMNjZqWxBAX0dw9"
                              alt="John Smith"/>
                     </div>
                     <div className="member-name">Lutfiyev Ilyos</div>
@@ -19,7 +19,7 @@ function About(){
                 </div>
                 <div className="team-member">
                     <div className="member-avatar">
-                        <img src="../images/Tursunboyev%20Odiljon.jpg"
+                        <img src="https://share.google/images/l3FMNjZqWxBAX0dw9"
                              alt="Sarah Johnson"/>
                     </div>
                     <div className="member-name">Tursunboyev Odiljon</div>
@@ -27,7 +27,7 @@ function About(){
                 </div>
                 <div className="team-member">
                     <div className="member-avatar">
-                        <img src="../images/Adashev%20Diyor.jpg"
+                        <img src="https://share.google/images/l3FMNjZqWxBAX0dw9"
                              alt="Michael Chen"/>
                     </div>
                     <div className="member-name">Adashev Diyor</div>
@@ -35,7 +35,7 @@ function About(){
                 </div>
                 <div className="team-member">
                     <div className="member-avatar">
-                        <img src="../images/Kamiljonov%20Shoxrux.jpg"
+                        <img src="https://share.google/images/l3FMNjZqWxBAX0dw9"
                              alt="Emily Davis"/>
                     </div>
                     <div className="member-name">Kamiljonov Shoxrux</div>
@@ -43,7 +43,7 @@ function About(){
                 </div>
                 <div className="team-member">
                     <div className="member-avatar">
-                        <img src="../images/Isayev%20Alibek.jpg"
+                        <img src="https://share.google/images/l3FMNjZqWxBAX0dw9"
                              alt="Emily Davis"/>
                     </div>
                     <div className="member-name">Isayev Alibek</div>
