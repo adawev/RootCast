@@ -2,7 +2,7 @@ import {Outlet} from "react-router";
 import "./style.css"
 import Footer from "./Footer";
 
-function Navbar() {
+function Navbar({footer}) {
     return (
         <div>
             <nav className="navbar">
@@ -29,7 +29,7 @@ function Navbar() {
                 </ul>
             </nav>
             <Outlet/>
-            <Footer/>
+            {footer? null:<Footer/> }
         </div>
     );
 }

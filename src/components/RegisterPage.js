@@ -48,7 +48,7 @@ function RegisterPage() {
                         />
                     </div>
 
-                    <button type="submit" className="submit-button">
+                    <button type="submit" className="submit-button" form={'registerForm'}>
                         Register
                     </button>
                 </form>
