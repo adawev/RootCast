@@ -11,35 +11,43 @@ function About(){
             <div className="team-grid">
                 <div className="team-member">
                     <div className="member-avatar">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop"
+                        <img src="../images/Lutfiyev%20Ilyos.jpg"
                              alt="John Smith"/>
                     </div>
-                    <div className="member-name">John Smith</div>
-                    <div className="member-role">Founder & CEO</div>
+                    <div className="member-name">Lutfiyev Ilyos</div>
+                    <div className="member-role">Backend Developer</div>
                 </div>
                 <div className="team-member">
                     <div className="member-avatar">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop"
+                        <img src="../images/Tursunboyev%20Odiljon.jpg"
                              alt="Sarah Johnson"/>
                     </div>
-                    <div className="member-name">Sarah Johnson</div>
-                    <div className="member-role">Lead Developer</div>
+                    <div className="member-name">Tursunboyev Odiljon</div>
+                    <div className="member-role">Backend Developer</div>
                 </div>
                 <div className="team-member">
                     <div className="member-avatar">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop"
+                        <img src="../images/Adashev%20Diyor.jpg"
                              alt="Michael Chen"/>
                     </div>
-                    <div className="member-name">Dr. Michael Chen</div>
-                    <div className="member-role">Chief Meteorologist</div>
+                    <div className="member-name">Adashev Diyor</div>
+                    <div className="member-role">Frontend Developer</div>
                 </div>
                 <div className="team-member">
                     <div className="member-avatar">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop"
+                        <img src="../images/Kamiljonov%20Shoxrux.jpg"
                              alt="Emily Davis"/>
                     </div>
-                    <div className="member-name">Emily Davis</div>
-                    <div className="member-role">Head of Design</div>
+                    <div className="member-name">Kamiljonov Shoxrux</div>
+                    <div className="member-role">Backend Developer</div>
+                </div>
+                <div className="team-member">
+                    <div className="member-avatar">
+                        <img src="../images/Isayev%20Alibek.jpg"
+                             alt="Emily Davis"/>
+                    </div>
+                    <div className="member-name">Isayev Alibek</div>
+                    <div className="member-role">UI Designer</div>
                 </div>
             </div>
         </section>
