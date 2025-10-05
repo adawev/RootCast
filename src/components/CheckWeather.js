@@ -10,11 +10,11 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
     const [touristTips, setTouristTips] = useState([]);
 
     const cityMapping = {
-        "Paris": "Paris",
+        Paris: "Paris",
         "New York": "New York",
-        "Tokyo": "Tokyo",
-        "London": "London",
-        "Moscow": "Moscow"
+        Tokyo: "Tokyo",
+        London: "London",
+        Moscow: "Moscow",
     };
 
     const normalize = (str) => str?.trim().toLowerCase();
@@ -39,7 +39,6 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
         getWeather({ city, date });
     };
 
-    // City input filter
     const handleCityChange = (e) => {
         const val = e.target.value.toLowerCase();
         if (!val) return setFilteredCities([]);
@@ -54,18 +53,25 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
         setFilteredCities([]);
     };
 
-    // Weather card data: default qiymat bilan
     const cardData = useMemo(() => {
         if (!weathercheck || weathercheck.error) return null;
         return weathercheck;
     }, [weathercheck]);
 
-    // Tourist tips
     const tips = useMemo(() => {
-        if (!cardData || !cardData.location?.name) return [];
-        const mappedName = cityMapping[cardData.location.name] || cardData.location.name;
-        const cityTips = touristTips.find(t => normalize(t.city) === normalize(mappedName));
-        return cityTips?.tourist_tips || [];
+        if (!cardData?.temp) return [];
+        let filteredTips = [];
+
+        if (cardData.location?.name) {
+            const mappedName = cityMapping[cardData.location.name] || cardData.location.name;
+            const cityTips = touristTips.find((t) => normalize(t.city) === normalize(mappedName));
+            if (cityTips?.tourist_tips) filteredTips = cityTips.tourist_tips.slice(0, 3); // faqat 3 ta
+        }
+
+        // Agar backend advice mavjud bo‘lsa, uni oxiriga qo‘shish
+        if (cardData.advice) filteredTips.push(cardData.advice);
+
+        return filteredTips;
     }, [cardData, touristTips]);
 
     return (
@@ -75,11 +81,7 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
 
             {/* Form */}
             <div className="form-container">
-                <form
-                    className="form-control"
-                    id="CheckWeatherForm"
-                    onSubmit={handleSubmit(onSubmitForm)}
-                >
+                <form className="form-control" id="CheckWeatherForm" onSubmit={handleSubmit(onSubmitForm)}>
                     <div style={{ position: "relative" }}>
                         <input
                             type="text"
@@ -91,11 +93,7 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
                         {filteredCities.length > 0 && (
                             <div className="autocomplete-list">
                                 {filteredCities.map((c) => (
-                                    <div
-                                        key={c.id}
-                                        className="autocomplete-item"
-                                        onClick={() => handleSelectCity(c)}
-                                    >
+                                    <div key={c.id} className="autocomplete-item" onClick={() => handleSelectCity(c)}>
                                         {c.name}, {c.country}
                                     </div>
                                 ))}
@@ -112,9 +110,7 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
             {loading && <div className="loading">Loading...</div>}
 
             {/* Error */}
-            {weathercheck?.error && (
-                <div className="error">{weathercheck.error}</div>
-            )}
+            {weathercheck?.error && <div className="error">{weathercheck.error}</div>}
 
             {/* Cards */}
             {cardData && (
@@ -124,7 +120,7 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
                     <div className="weather-card">
                         <div className="weather-header">
                             <div className="weather-location">
-                                {cardData.location?.name}, {cardData.location?.country || ""}
+                                {cardData.location?.name || "-"}, {cardData.location?.country || "-"}
                             </div>
                             <div className="weather-date">
                                 {new Date().toLocaleDateString("en-US", {
@@ -136,28 +132,26 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
                         </div>
 
                         <div className="weather-main">
-                            <div className="weather-temp">{Math.round(cardData.weather.temp)}°C</div>
-                            <div className="weather-desc">
-                                {cardData.weather.description} ({cardData.weather.main})
-                            </div>
+                            <div className="weather-temp">{cardData.temp !== undefined ? Math.round(cardData.temp) : "-"}°C</div>
+                            <div className="weather-desc">{cardData.description || "-"} ({cardData.main || "-"})</div>
                         </div>
 
                         <div className="weather-details">
                             <div className="detail-item">
                                 <img src="https://cdn-icons-png.flaticon.com/512/481/481460.png" alt="wind" />
-                                <span>Wind: {cardData.weather.windSpeed} m/s</span>
+                                <span>Wind: {cardData.windSpeed || "-"} m/s</span>
                             </div>
                             <div className="detail-item">
                                 <img src="https://cdn-icons-png.flaticon.com/512/414/414974.png" alt="humidity" />
-                                <span>Humidity: {cardData.weather.humidity}%</span>
+                                <span>Humidity: {cardData.humidity || "-"}%</span>
                             </div>
                             <div className="detail-item">
                                 <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="pressure" />
-                                <span>Pressure: {cardData.weather.pressure} hPa</span>
+                                <span>Pressure: {cardData.pressure || "-"} hPa</span>
                             </div>
                             <div className="detail-item">
                                 <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="feels like" />
-                                <span>Feels like: {cardData.weather.feelsLike}°C</span>
+                                <span>Feels like: {cardData.feelsLike || "-"}°C</span>
                             </div>
                         </div>
                     </div>
