@@ -19,6 +19,7 @@ const slice = createSlice({
             state.loading = false;
             state.data = null; // data yo‘q
             state.error = action.payload?.error || "Xatolik yuz berdi!";
+            toast.info(action.payload?.error || "Error!");
         },
         loadingStart: (state) => {
             state.loading = true;
