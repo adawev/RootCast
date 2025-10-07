@@ -11,9 +11,8 @@ function RegisterPage({login}) {
 
 
     const onSubmitRegister = (data) => {
-        login(data)
-        toast.success("Register successfully");
-        navigate("/")
+        login(data, navigate)
+
     }
 
     return <div className={'wrapperRegisterPage'}>

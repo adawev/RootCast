@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { apiCall } from "../api";
 import {toast} from "sonner";
 
+
+
 const slice = createSlice({
     name: "login",
     initialState: {
@@ -9,8 +11,8 @@ const slice = createSlice({
     },
     reducers: {
         resSaved: (state, action) => {
-            toast.info(action.payload);
-            state.data = action.payload;
+            toast.success("Register successfully");
+            action.payload.navigate("/");
         },
         onError: (state) => {
             toast.error("Error occured!");
@@ -18,13 +20,14 @@ const slice = createSlice({
     },
 });
 
+
 export const { resSaved, errorCreate } = slice.actions;
 
-export const login = (data, reset) => apiCall({
+export const login = (data, navigate) => apiCall({
     url: "/register",
     method: "post",
     data: data,
-    onSuccess: resSaved,
+    onSuccess: (response) => resSaved({ data: response, navigate }),
     onError: errorCreate,
 });
 
