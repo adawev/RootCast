@@ -18,16 +18,13 @@ const slice = createSlice({
     },
 });
 
-export const { resSaved, errorCreate, loadingStart } = slice.actions;
+export const { resSaved, errorCreate } = slice.actions;
 
 export const login = (data, reset) => apiCall({
     url: "/register",
     method: "post",
     data: data,
-    onSuccess: (responseData) => (dispatch) => {
-        reset();
-        dispatch(resSaved(responseData));
-    },
+    onSuccess: resSaved,
     onError: errorCreate,
 });
 
