@@ -68,7 +68,7 @@ button {
     margin-left: -2rem;
     width: 290px;             /* kengligi kattalashdi */
     height: 65px;             /* balandligi kattalashdi */
-    background: url('../images/logo.png') no-repeat center center;
+    background: url('../../public/images/logo.png') no-repeat center center;
     background-size: contain;
     display: inline-block;    /* flex ichida joylashadi, paddingga ta’sir qilmaydi */
 }
@@ -407,7 +407,7 @@ button {
     margin-bottom: 1.5rem;
     width: 400px;
     height: 80px;
-    background: url('../images/logo.png') no-repeat center center;
+    background: url('../../public/images/logo.png') no-repeat center center;
     background-size: contain;
     display: inline-block;
 }
@@ -493,7 +493,7 @@ button {
 .checkPage{
     padding-top: 20vh;
     height: 110vh;
-    background-image: url("../images/nature2.jpg");
+    background-image: url("../../public/images/nature2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -769,7 +769,7 @@ button {
 .wrapperRegisterPage {
     padding-top: 20vh;
     height: 100vh;
-    background-image: url("../images/nature.jpg");
+    background-image: url("../../public/images/nature.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -777,7 +777,7 @@ button {
 .wrapperLoginPage {
     padding-top: 20vh;
     height: 100vh;
-    background-image: url("../images/nature1.jpg");
+    background-image: url("../../public/images/nature1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -908,9 +908,8 @@ button {
 }
 
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
+    display: flex;
+    gap: 4rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -943,4 +942,21 @@ button {
 .member-role {
     color: #999;
     font-size: 1rem;
+}
+.member-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.member-socials a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.member-socials a:hover {
+    transform: scale(1.2);
+    color: #1da1f2;
 }
