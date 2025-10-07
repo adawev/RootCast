@@ -126,7 +126,7 @@ function CheckWeather({ getWeather, weathercheck, loading }) {
                     <div className="weather-card">
                         <div className="weather-header">
                             <div className="weather-location">
-                                {cardData.city || cardData.location?.name || "-"}, {cardData.location?.country || "-"}
+                                {cardData.city || cardData.location?.name || "-"}
                             </div>
                             <div className="weather-date">
                                 {cardData.date || new Date().toLocaleDateString("en-US", {
