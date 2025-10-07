@@ -1,14 +1,19 @@
 import {useForm} from "react-hook-form";
 import {connect} from "react-redux";
 import {login} from '../store/reducers/Login'
+import {useNavigate} from "react-router";
+import {toast} from "sonner";
 
 
 function RegisterPage({login}) {
     const {handleSubmit, register, setValue} = useForm();
+    const navigate = useNavigate();
+
 
     const onSubmitRegister = (data) => {
         login(data)
-        console.log(data)
+        toast.success("Register successfully");
+        navigate("/")
     }
 
     return <div className={'wrapperRegisterPage'}>
