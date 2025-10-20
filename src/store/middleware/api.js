@@ -7,7 +7,7 @@ const api = ({ dispatch }) => (next) => async (action) => {
 
     try {
         const response = await axios.request({
-            baseURL: "https://api.bigroot.uz/api",
+            baseURL: "https://apicast.bigroot.uz/api",
             url,
             method,
             data,

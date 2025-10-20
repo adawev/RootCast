@@ -39,7 +39,7 @@ The app will run on `http://localhost:3000`
 
 ## API Integration
 
-Backend: `api.bigroot.uz/api`
+Backend: `apicast.bigroot.uz/api`
 
 ## Team
 
