@@ -44,7 +44,7 @@ yarn start
 yarn build
 
 The app will run at http://localhost:3000
-
+---
 👥 Team
 
 Adashev Diyor — PM & Lead Frontend Developer
