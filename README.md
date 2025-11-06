@@ -44,11 +44,11 @@ yarn start
 yarn build
 
 The app will run at http://localhost:3000
----
+```
 👥 Team
 
-Adashev Diyor — PM & Lead Frontend Developer
-Tursunboyev Odiljon — Backend Developer
-Lutfiyev Ilyos — Backend Developer
-Kamiljonov Shoxrux — Backend Developer
-Isayev Alibek — UI/UX Designer
+- Adashev Diyor — PM & Lead Frontend Developer
+- Tursunboyev Odiljon — Backend Developer
+- Lutfiyev Ilyos — Backend Developer
+- Kamiljonov Shoxrux — Backend Developer
+- Isayev Alibek — UI/UX Designer
