@@ -1,0 +1,92 @@
+[
+  {
+    "city": "Paris",
+    "country": "France",
+    "tourist_tips": [
+      "Don't forget to greet in French (Bonjour, Merci).",
+      "Be patient when waiting for water or the bill in restaurants.",
+      "Make reservations in popular restaurants in advance."
+    ]
+  },
+  {
+    "city": "New York",
+    "country": "USA",
+    "tourist_tips": [
+      "Check the subway routes in advance.",
+      "Use taxi services carefully; public transport is usually better.",
+      "Avoid walking against the pedestrian flow."
+    ]
+  },
+  {
+    "city": "Tokyo",
+    "country": "Japan",
+    "tourist_tips": [
+      "Do not speak loudly in public places.",
+      "Learn how to use chopsticks properly.",
+      "Remember that tipping is not customary when giving gifts."
+    ]
+  },
+  {
+    "city": "London",
+    "country": "United Kingdom",
+    "tourist_tips": [
+      "Pay attention to the direction of traffic on the streets.",
+      "Use the Tube (subway) system correctly.",
+      "Avoid loud conversations in public transport."
+    ]
+  },
+  {
+    "city": "Rome",
+    "country": "Italy",
+    "tourist_tips": [
+      "Follow the dress code when entering religious sites.",
+      "Show respect for local customs.",
+      "Don't forget to tip for small services."
+    ]
+  },
+  {
+    "city": "Barcelona",
+    "country": "Spain",
+    "tourist_tips": [
+      "Always keep an eye on your belongings in open spaces.",
+      "Reserve a table in local restaurants in advance.",
+      "Check tickets when using public transport to avoid regrets."
+    ]
+  },
+  {
+    "city": "Dubai",
+    "country": "UAE",
+    "tourist_tips": [
+      "Follow social etiquette rules (avoid wearing revealing clothing).",
+      "Pay attention to restaurant and café hours during Ramadan.",
+      "Use official tariffs for taxis and transport services."
+    ]
+  },
+  {
+    "city": "Singapore",
+    "country": "Singapore",
+    "tourist_tips": [
+      "Do not chew gum on the streets; it is illegal.",
+      "Follow cleanliness rules in public transport and buildings.",
+      "Avoid breaking rules set by authorities."
+    ]
+  },
+  {
+    "city": "Bangkok",
+    "country": "Thailand",
+    "tourist_tips": [
+      "Follow the dress code when entering temples and religious sites.",
+      "Negotiate tuk-tuk and taxi fares in advance.",
+      "Pay attention to safety and pickpockets in public transport."
+    ]
+  },
+  {
+    "city": "Sydney",
+    "country": "Australia",
+    "tourist_tips": [
+      "Use sunscreen and protective clothing to avoid sunburn.",
+      "Use public transport and trams correctly.",
+      "Follow safety rules in open spaces."
+    ]
+  }
+]
