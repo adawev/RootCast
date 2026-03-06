@@ -3,7 +3,7 @@
 **RootCast** is a modern weather forecasting web application that provides real-time weather information for any city worldwide.  
 It features a smart city search, useful tourist tips, and a responsive interface for all devices.
 
-🔗 **Live Demo:** [rootcast.bigroot.uz](https://rootcast.bigroot.uz)
+🔗 **Live Demo:** [rootcast.diyorjon.com](https://rootcast.diyorjon.com)
 
 ---
 
