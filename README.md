@@ -23,7 +23,7 @@ It features a smart city search, useful tourist tips, and a responsive interface
 - **Bootstrap 5 & React Bootstrap**  
 - **Axios** for API integration  
 
-**Backend API:** [apicast.bigroot.uz/api](https://apicast.bigroot.uz/api)
+**Backend API:** [apicast.bigroot.uz/api](https://apirootcast.diyorjon.com/api)
 
 ---
 
